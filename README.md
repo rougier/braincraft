@@ -240,12 +240,12 @@ Author        | Date       | File           | Score                  | Seed   | 
 [@tjayada]: https://github.com/tjayada
 [@snowgoon88]: https://github.com/@snowgoon88
 [@vforch]: https://github.com/vforch
-[simple.py]:  ./braincraft/player_simple.py
-[random.py]: ./braincraft/player_random.py
-[manual.py]: ./braincraft/player_manual.py
-[switcher.py]:  ./braincraft/player_switcher.py
-[switcher_alt.py]:  ./braincraft/player_switcher_alt.py
-[evolution.py]: ./braincraft/player_evolution.py
+[simple.py]:  ./braincraft/env1_player_simple.py
+[random.py]: ./braincraft/env1_player_random.py
+[manual.py]: ./braincraft/env1_player_manual.py
+[switcher.py]:  ./braincraft/env1_player_switcher.py
+[switcher_alt.py]:  ./braincraft/env1_player_switcher_alt.py
+[evolution.py]: ./braincraft/env1_player_evolution.py
 [Genetic algorithm]: https://github.com/rougier/braincraft/pull/5
 [Handcrafted weights 1]: https://github.com/rougier/braincraft/pull/7
 [Handcrafted weights 2]: https://github.com/rougier/braincraft/pull/8

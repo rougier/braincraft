@@ -76,7 +76,7 @@ class Environment:
 
     def update(self, bot):
         """Update the environment, refill bot if on a source and
-        decrease bot energy by move and hit penatly"""
+        decrease bot energy by move and hit penalty"""
 
         # Source leak
         self.source.update()

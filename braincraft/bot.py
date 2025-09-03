@@ -34,7 +34,7 @@ class Bot:
     def is_legal(self, position, environment):
         """
         Check whether a circular bot with given radius and position
-        is colliding with any wall in the provied environment.
+        is colliding with any wall in the provided environment.
 
         Parameters
         ----------
