@@ -1,5 +1,5 @@
 # Braincraft challenge entry — 1000 neurons, 100 seconds, 10 runs, 2 choices, no reward
-# by Alain Dutech
+# by Alain Dutech & Valentin Forch
 """
 Example and evaluation of the performances of a handcrafter switcher player.
 """
