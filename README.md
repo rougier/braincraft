@@ -29,12 +29,13 @@ The whole challenge is made of 5 different tasks with increasing complexity. Eac
 | #  | Name              |  Start         | End            | Status     |
 | -- | ----------------- | -------------- | -------------- | ---------- |
 | 1  | [Simple decision] | `JUL 01, 2025` | `AUG 31, 2025` | **Active** |
-| 2  |                   | `AUG 01, 2025` | `SEP 30, 2025` | Inactive   |
-| 3  |                   | `SEP 01, 2025` | `OCT 31, 2025` | Inactive   |
-| 4  |                   | `OCT 01, 2025` | `NOV 30, 2025` | Inactive   |
-| 5  |                   | `NOV 01, 2025` | `DEC 31, 2025` | Inactive   |
+| 2  | [Cued decision]   | `SEP 01, 2025` | `OCT 31, 2025` | **Active** |
+| 3  |                   | `NOV 01, 2025` | `DEC 31, 2025` | Inactive   |
+| 4  |                   | `JAN 01, 2026` | `FEB 28, 2026` | Inactive   |
+| 5  |                   | `MAR 01, 2026` | `APR 30, 2026` | Inactive   |
 
 [Simple decision]: #task-1-simple-decision
+[Cued decision]: #task-2-cued-decision
 
 
 ## Task 1: Simple decision
@@ -57,6 +58,25 @@ The optimal strategy involves initially exploring both potential energy source l
 **Figure 1.** **Schematic of the challenge environment.** The bot begins at the center of the arena, facing upward (indicated by the triangle ▲). At each run, the energy source is located at either position 1 or 2 (but not both). The environment is continuous, and the bot moves at a constant speed. The neural model controls only the agent’s steering — i.e., its change in orientation at each time step.
 
 This first task, that may appear trivial, poses nonetheless a non-trivial challenge for current neuroscience-inspired models because of the hard constraints that have been added (see Methods section below). Success will require combining functional neural dynamics with sensorimotor control in a continuous loop, echoing the principles of embodied cognition.
+
+
+## Task 2: Cued decision
+
+We reuse the environment from task 1 with some differences. There is now a closed path at either right or left as illustrated on Figure 2. The closed path is indicated by a red color (RR) and the open path is indicated by a blue color (BB). The second difference are the sources 1 and 2 that are simultaneously present. The optimal strategy is thus to follow the initial blue cue, to stick to the initial direction and to ignore the additional blue distractor.
+
+```
+┌─────────────────┐
+│                 │
+│   ┌──┐   ┌──┐   │  ▲ :   Bot start position & orientation (up)
+│   │BB│   │RR│   │  1/2 : Potential energy source location
+│ 1 │  │ ▲ │  │ 2 │  B: Blue block
+│   │  │   │BB└───┤  R: Red block
+│   └──┘   └──────┤
+│                 │
+└─────────────────┘
+```
+
+**Figure 2.** **Schematic of the challenge environment.** The bot begins at the center of the arena, facing upward (indicated by the triangle ▲). At each run, an energy source is located on both sides, but only one side allows to move freely while the other is a cul-de-sac.
 
 
 # Methods
