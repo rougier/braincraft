@@ -4,15 +4,10 @@
 Example and evaluation of the performances of a handcrafter switcher player.
 """
 
+import numpy as np
 from bot import Bot
 from environment_1 import Environment
-
-# ** activation functions ******************************************************
-def ReLU(x):
-    return np.clip(x, a_min=0, a_max=None)
-    
-def identity(x):
-    return x
+from nonlinearities import NonlinearityType, get_nonlinearity_function
 
 # ** define a model ***********************************************************
 def switcher_player():
@@ -23,9 +18,8 @@ def switcher_player():
     
     # network hyperparameters
     leak = 0.95
-    def act(x):
-        x = np.tanh(x)
-        return np.where(x > 0, x, 0)
+    f = NonlinearityType.TANH_RELU  # Custom tanh + ReLU combination
+    g = NonlinearityType.LINEAR
     
     # model size
     n_cam = bot.camera.resolution
@@ -55,7 +49,7 @@ def switcher_player():
     W = np.zeros((n_rec, n_rec))
     W_out = np.zeros(n_rec)
     
-    model = W_in, W, W_out, 0, leak, act, identity
+    model = W_in, W, W_out, 0, leak, f, g
 
     # input weights for connecting sensor to steering pop
     for i in range(0, n_cam, n_min):  W_in[i, i] = exc_input
@@ -100,7 +94,6 @@ def switcher_player():
 
 if __name__ == "__main__":
     import time
-    import numpy as np    
     from challenge import train, evaluate
     
     seed = 78

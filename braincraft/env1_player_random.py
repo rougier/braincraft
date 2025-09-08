@@ -4,11 +4,11 @@
 """
 Example and evaluation of the performances of a random player.
 """
+import numpy as np
 from bot import Bot
 from environment_1 import Environment
-    
-def identity(x):
-    return x
+from nonlinearities import NonlinearityType, get_nonlinearity_function
+from challenge import evaluate
 
 def random_player():
     """Random players building"""
@@ -20,8 +20,8 @@ def random_player():
     n = 1000
     p = bot.camera.resolution
     warmup = 0
-    f = np.tanh
-    g = np.tanh
+    f = NonlinearityType.TANH
+    g = NonlinearityType.TANH
     leak = 0.85
 
     # Random search for best model for 5 tries  (not efficient at all)
@@ -48,7 +48,6 @@ def random_player():
 # -----------------------------------------------------------------------------
 if __name__ == "__main__":
     import time
-    import numpy as np    
     from challenge import train, evaluate
 
     seed = 12345

@@ -4,12 +4,11 @@
 Example and evaluation of the performances of a random player.
 """
 
+import numpy as np
 from bot import Bot
 from environment_1 import Environment
+from nonlinearities import NonlinearityType, get_nonlinearity_function
     
-def identity(x):
-    return x
-
 def custom_eval(Environment, Bot, model, n_min, n_evals=1, t_max=300):
     """Agent evaluation with early stopping if to many wall hits happen"""
     
@@ -20,6 +19,12 @@ def custom_eval(Environment, Bot, model, n_min, n_evals=1, t_max=300):
         bot = Bot()
         
         W_in, W, W_out, warmup, leak, f, g = model
+        
+        # Convert enum types to functions if needed
+        if isinstance(f, NonlinearityType):
+            f = get_nonlinearity_function(f)
+        if isinstance(g, NonlinearityType):
+            g = get_nonlinearity_function(g)
         
         n_cam = bot.camera.resolution
         n_inp = W_in.shape[1]
@@ -66,9 +71,8 @@ def simple_player():
      
     # network hyperparameters
     leak = 0.95
-    def act(x):
-        x = np.tanh(x)
-        return np.where(x > 0, x, 0)
+    f = NonlinearityType.TANH  # Use TANH for the hidden layer activation
+    g = NonlinearityType.LINEAR  # Use LINEAR for the output layer
     
     # model size
     n_cam = bot.camera.resolution
@@ -92,7 +96,7 @@ def simple_player():
         W = np.zeros((n_rec, n_rec))
         W_out = np.zeros(n_rec)
         
-        model = W_in, W, W_out, 0, leak, act, identity
+        model = W_in, W, W_out, 0, leak, f, g
     
         # input weights for connecting sensor to steering pop
         for i in range(0, n_cam, n_min):  W_in[i, i] = exc_input
