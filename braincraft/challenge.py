@@ -5,6 +5,7 @@ import time
 import numpy as np
 from tqdm import tqdm
 from camera import Camera
+from nonlinearities import NonlinearityType, get_nonlinearity_function
 
 # from bot import Bot
 # from environment import Environment
@@ -112,6 +113,12 @@ def evaluate(model, Bot, Environment, runs=10, seed=None, debug=False):
     
     # Unfold model
     W_in, W, W_out, warmup, leak, f, g = model
+    
+    # Convert enum types to functions if needed
+    if isinstance(f, NonlinearityType):
+        f = get_nonlinearity_function(f)
+    if isinstance(g, NonlinearityType):
+        g = get_nonlinearity_function(g)
 
     scores = []
     seeds = np.random.randint(0, 1_000_000, runs)

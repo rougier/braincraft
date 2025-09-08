@@ -4,15 +4,10 @@
 Example and evaluation of the performances of a handcrafter switcher player.
 """
 
+import numpy as np
 from bot import Bot
 from environment_1 import Environment
-
-# ** activation functions ******************************************************
-def ReLU(x):
-    return np.clip(x, a_min=0, a_max=None)
-    
-def identity(x):
-    return x
+from nonlinearities import NonlinearityType, get_nonlinearity_function
 
 # ** define a model ***********************************************************
 def switcher_player():
@@ -100,8 +95,8 @@ def switcher_player():
     # finaly, apply to output
     W_out[0, i_turn_mid+2] = 100
 
-    f = lambda x: ReLU( x )
-    g = identity
+    f = NonlinearityType.RELU
+    g = NonlinearityType.LINEAR
     model = W_in, W, W_out, warmup, leak, f, g
 
     yield model
@@ -110,7 +105,6 @@ def switcher_player():
 
 if __name__ == "__main__":
     import time
-    import numpy as np    
     from challenge import train, evaluate
     
     seed = 78
