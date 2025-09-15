@@ -250,3 +250,24 @@ Author        | Date       | File           | Score                  | Seed   | 
 [Handcrafted weights 1]: https://github.com/rougier/braincraft/pull/7
 [Handcrafted weights 2]: https://github.com/rougier/braincraft/pull/8
 [Handcrafted weights 3]: https://github.com/rougier/braincraft/pull/8#issuecomment-3238121164
+
+## Task 1 submission — ESN player (DimitriosDC)
+
+**Player file:** `braincraft/env1_player_esn_dimitriosdc.py`
+
+**Approach (very short):**
+- Echo State Network (1000-unit reservoir), spectral radius control + state clipping.
+- Visual memory traces (10×10 grid) to avoid revisiting depleted sources.
+- Exploration–exploitation switching based on energy level.
+- Evolutionary training (32 pop × 10 generations), tournament selection + mutation.
+- Optionally: simple ensemble runs to assess robustness.
+
+**Assumed performance (local runs):**
+- Ensemble training runs: best ~170.79, means between ~45.85 and ~170.79 depending on run.
+- Generalization probe (5 randomized environment reps × clusters): macro mean ≈ **155.76 ± 79.93**.
+- Single best-agent replays often near **195–209** in favorable maps.
+
+**Notes:**
+- Only the player file is included in the PR; training/evaluation should use the official framework.
+- Please re-run with your seed/pipeline per the challenge rules.
+
