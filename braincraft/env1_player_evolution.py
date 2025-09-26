@@ -11,6 +11,8 @@ from tqdm import tqdm
 from multiprocessing import Pool, cpu_count
 from typing import Tuple, List, Callable, Generator
 
+from nonlinearities import NonlinearityType, get_nonlinearity_function
+
 # ------------------------------------------------------------------------------
 #  Custom reward and evalution functions
 # ------------------------------------------------------------------------------
@@ -196,7 +198,7 @@ def evaluate_bot_with_rewards(
 
 def evaluate_individual(
     args: Tuple[
-        np.ndarray, np.ndarray, np.ndarray, int, float, Callable, Callable, int, int
+        np.ndarray, np.ndarray, np.ndarray, int, float, NonlinearityType, NonlinearityType, int, int
     ],
 ) -> Tuple[float, float]:
     """Worker function to evaluate a single wout"""
@@ -209,7 +211,11 @@ def evaluate_individual(
     from bot import Bot
     from environment_1 import Environment
 
-    model = win, w, wout, warmup, leak, f, g
+    # Convert enum types to functions
+    f_func = get_nonlinearity_function(f)
+    g_func = get_nonlinearity_function(g)
+    
+    model = win, w, wout, warmup, leak, f_func, g_func
     score_mean, score_std = evaluate_bot_with_rewards(
         model, Bot, Environment, runs=3, debug=False
     )
@@ -223,8 +229,8 @@ def evaluate_population_parallel(
     w: np.ndarray,
     warmup: int,
     leak: float,
-    f: Callable,
-    g: Callable,
+    f: NonlinearityType,
+    g: NonlinearityType,
     seed: int,
     num_processes: int = None,
 ) -> List[float]:
@@ -249,7 +255,7 @@ def evaluate_population_parallel(
 
 
 def evolutionary_player() -> Generator[
-    Tuple[np.ndarray, np.ndarray, np.ndarray, int, float, Callable, Callable]
+    Tuple[np.ndarray, np.ndarray, np.ndarray, int, float, NonlinearityType, NonlinearityType]
 ]:
     """Evolutionary algorithm player - optimizes only Wout with multiprocessing"""
 
@@ -265,8 +271,8 @@ def evolutionary_player() -> Generator[
     n = 1000
     p = bot.camera.resolution
     warmup = 0
-    f = np.tanh  # activation function for 'reservoir'
-    g = np.tanh  # activation function for 'reservoir output'
+    f = NonlinearityType.TANH  # activation function for 'reservoir'
+    g = NonlinearityType.TANH  # activation function for 'reservoir output'
     leak = 0.8
     spectral_radius = 0.95  # Desired spectral radius for W
     density = 0.1  # Density for Win and W
