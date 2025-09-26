@@ -100,14 +100,14 @@ The bot is equipped with a camera that allows to perceive the environment:
 Color are indexed according to the following table (RGB code are only
 indicated for debug purpose):
 
-| Index | RGB code          | Name       |
-| ----- | ----------------- | ---------- |
-| 1     | `[200, 200, 200]` | light gray |
-| 2     | `[100, 100, 100]` | dark gray  |
-| 3     | `[255, 255,   0]` | yellow     |
-| 4     | `[  0,   0, 255]` | blue       |
-| 5     | `[255,   0,   0]` | red        |
-| 6     | `[  0, 255,   0]` | green      |
+| **Value** | RGB code          | Name       |
+| --------- | ----------------- | ---------- |
+| 1         | `[200, 200, 200]` | light gray |
+| 2         | `[100, 100, 100]` | dark gray  |
+| 3         | `[255, 255,   0]` | yellow     |
+| 4         | `[  0,   0, 255]` | blue       |
+| 5         | `[255,   0,   0]` | red        |
+| 6         | `[  0, 255,   0]` | green      |
 
 ## Model
 
