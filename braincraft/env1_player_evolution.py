@@ -450,7 +450,7 @@ def mutate_wout(
 if __name__ == "__main__":
     import time
     import numpy as np
-    from challenge import train, evaluate
+    from challenge_1 import train, evaluate
     from bot import Bot
     from environment_1 import Environment
 

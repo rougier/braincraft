@@ -59,6 +59,7 @@ The optimal strategy involves initially exploring both potential energy source l
 
 This first task, that may appear trivial, poses nonetheless a non-trivial challenge for current neuroscience-inspired models because of the hard constraints that have been added (see Methods section below). Success will require combining functional neural dynamics with sensorimotor control in a continuous loop, echoing the principles of embodied cognition.
 
+**WARNING**: For task 1, we do not use colors and color sensors are **not** fed to the bot.
 
 ## Task 2: Cued decision
 
@@ -78,6 +79,7 @@ We reuse the environment from task 1 with some differences. There is now a close
 
 **Figure 2.** **Schematic of the challenge environment.** The bot begins at the center of the arena, facing upward (indicated by the triangle ▲). At each run, an energy source is located on both sides, but only one side allows to move freely while the other is a cul-de-sac.
 
+**WARNING**: For task 2, since we **do** use colors, color sensors are fed to the bot.
 
 # Methods
 

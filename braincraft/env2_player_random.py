@@ -29,7 +29,7 @@ def random_player():
     score_best = -1    
 
     for i in range(5):
-        Win  = np.random.uniform(-1,1, (n,p+3))
+        Win  = np.random.uniform(-1,1, (n,2*p+3))
         W = np.random.uniform(-1,1, (n,n))*(np.random.uniform(0,1, (n,n)) < 0.1)
         Wout = 0.1*np.random.uniform(-1, 1, (1,n))
         model = Win, W, Wout, warmup, leak, f, g
@@ -49,7 +49,7 @@ def random_player():
 if __name__ == "__main__":
     import time
     import numpy as np    
-    from challenge_1 import train, evaluate
+    from challenge_2 import train, evaluate
 
     seed = 12345
     

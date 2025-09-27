@@ -117,7 +117,7 @@ def simple_player():
 if __name__ == "__main__":
     import time
     import numpy as np    
-    from challenge import train, evaluate
+    from challenge_1 import train, evaluate
     
     seed = 78
     np.random.seed(seed)
