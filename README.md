@@ -216,7 +216,7 @@ as well as the Environment (task dependent) class that also gives access to ener
  - `probability` (constant, 1.0, task & source dependent)
  - `quality` (constant, 1.0, task & source dependent)
  - `leak` (constant, 2/1000)
- - `refill` (constant, 5/1000)
+ - `refill` (constant (5/1000) or dynamic)
 
 These variables can be read (and possibly modified) during training but they won't be accessible during testing (no reading, no writing). To actually move the bot, you need to call the `forward` method. This method first changes the direction of the bot and then move it forward and update the internal state (sensors, hit detection, energy consumption). The evaluation method has also a debug flag that may be helpful to visualize the behavior of your model (see Figure 2).
 
