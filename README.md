@@ -28,14 +28,15 @@ The whole challenge is made of 5 different tasks with increasing complexity. Eac
 
 | #  | Name              |  Start         | End            | Status     |
 | -- | ----------------- | -------------- | -------------- | ---------- |
-| 1  | [Simple decision] | `JUL 01, 2025` | `AUG 31, 2025` | **Active** |
-| 2  | [Cued decision]   | `SEP 01, 2025` | `OCT 31, 2025` | **Active** |
-| 3  |                   | `NOV 01, 2025` | `DEC 31, 2025` | Inactive   |
-| 4  |                   | `JAN 01, 2026` | `FEB 28, 2026` | Inactive   |
-| 5  |                   | `MAR 01, 2026` | `APR 30, 2026` | Inactive   |
+| 1  | [Simple decision] | `JUL 01, 2025` | `AUG 31, 2025` | Inactive   |
+| 2  | [Cued decision]   | `SEP 01, 2025` | `DEC 31, 2025` | Inactive   |
+| 3  | [Valued decision] | `JAN 01, 2026` | `MAY 01, 2026` | **Active** |
+| 4  |                   |                |                | Inactive   |
+| 5  |                   |                |                | Inactive   |
 
 [Simple decision]: #task-1-simple-decision
 [Cued decision]: #task-2-cued-decision
+[Valued decision]: #task-3-valued-decision
 
 
 ## Task 1: Simple decision
@@ -69,7 +70,7 @@ We reuse the environment from task 1 with some differences. There is now a close
 ┌─────────────────┐
 │                 │
 │   ┌──┐   ┌──┐   │  ▲ :   Bot start position & orientation (up)
-│   │BB│   │RR│   │  1/2 : Potential energy source location
+│   │BB│   │RR│   │  1/2 : Energy source location
 │ 1 │  │ ▲ │  │ 2 │  B: Blue block
 │   │  │   │BB└───┤  R: Red block
 │   └──┘   └──────┤
@@ -80,6 +81,24 @@ We reuse the environment from task 1 with some differences. There is now a close
 **Figure 2.** **Schematic of the challenge environment.** The bot begins at the center of the arena, facing upward (indicated by the triangle ▲). At each run, an energy source is located on both sides, but only one side allows to move freely while the other is a cul-de-sac.
 
 **WARNING**: For task 2, since we **do** use colors, color sensors are fed to the bot.
+
+
+## Task 3: Valued decision
+
+We reuse the environment from task 1 with a major difference. Both sources are simultaneously present but their quality differs: one is better than the other in term of refill capacity. The optimal strategy is thus to test both sources to decide which one is better than the other and to stick to this source.
+```
+┌─────────────────┐
+│                 │
+│   ┌──┐   ┌──┐   │  ▲     : Bot start position & orientation (up)
+│   │  │   │  │   │  1 & 2 : Energy source locations with different quality
+│ 1 │  │ ▲ │  │ 2 │ 
+│   │  │   │  │   │
+│   └──┘   └──┘   │
+│                 │
+└─────────────────┘
+```
+
+**Figure 3.** **Schematic of the challenge environment.** The bot begins at the center of the arena, facing upward (indicated by the triangle ▲). At each run, two energy sources are located at position 1 or 2 whose refill is different (one being better than the other). The environment is continuous, and the bot moves at a constant speed. The neural model controls only the agent’s steering — i.e., its change in orientation at each time step.
 
 # Methods
 
@@ -203,7 +222,7 @@ These variables can be read (and possibly modified) during training but they won
 
 ![](./data/debug.png)
 
-**Figure 2.** **Debug view during evaluation.** The left part is a bird-eye view of the environment where the yellow part is the unique source of energy. The right part is a first-person view build from the set of 64 sensors that is not needed during evaluation (but it might help debug).
+**Figure 4.** **Debug view during evaluation.** The left part is a bird-eye view of the environment where the yellow part is the unique source of energy. The right part is a first-person view build from the set of 64 sensors that is not needed during evaluation (but it might help debug).
 
 
 # Discussion
@@ -245,20 +264,40 @@ below.
 
 Author        | Date       | File           | Score                  | Seed   | Description
 ------------- | ---------- | -------------- | -----------------------|------- | -------------------------
-[@rougier]    | 07/06/2025 | [manual.py]    | **15.00** (single run) | None   | Manual player (reference)
-[@rougier]    | 24/07/2025 | [random.py]    | **1.46** ±  0.54       | 12345  | Stupid random bot
+[@rougier]    | 07/06/2025 | [manual-1.py]  | **15.00** (single run) | None   | Manual player (reference)
+[@rougier]    | 24/07/2025 | [random-1.py]  | **1.46** ±  0.54       | 12345  | Stupid random bot
 [@tjayada]    | 31/07/2025 | [evolution.py] | **12.70** ± 0.43       | 78     | [Genetic algorithm]
 [@vforch]     | 21/08/2025 | [simple.py]    | **13.71** ± 0.46       | 78     | [Handcrafted weights 1]
 [@snowgoon88] | 28/08/2025 | [switcher.py]  | **11.39** ± 3.56       | 78     | [Handcrafted weights 2]
 [@vforch],[@snowgoon88] | 31/08/2025 | [switcher_alt.py]  | **14.71** ± 0.46   | 78     | [Handcrafted weights 3]
+
+
+## Task 2
+
+Author        | Date       | File           | Score                  | Seed   | Description
+------------- | ---------- | -------------- | -----------------------|------- | -------------------------
+[@rougier]    | 10/10/2025 | [manual-2.py]  | **15.00** (single run) | None   | Manual player (reference)
+[@rougier]    | 10/10/2025 | [random-2.py]  | **1.27** ± 0.09        | 12345  | Stupid random bot
+
+
+## Task 3
+
+Author        | Date       | File           | Score                  | Seed   | Description
+------------- | ---------- | -------------- | -----------------------|------- | -------------------------
+[@rougier]    | 04/02/2026 | [manual-3.py]  | **15.00** (single run) | None   | Manual player (reference)
+[@rougier]    | 04/02/2026 | [random-3.py]  | **0.99** ± 0.08        | 12345  | Stupid random bot
 
 [@rougier]: https://github.com/rougier
 [@tjayada]: https://github.com/tjayada
 [@snowgoon88]: https://github.com/@snowgoon88
 [@vforch]: https://github.com/vforch
 [simple.py]:  ./braincraft/env1_player_simple.py
-[random.py]: ./braincraft/env1_player_random.py
-[manual.py]: ./braincraft/env1_player_manual.py
+[random-1.py]: ./braincraft/env1_player_random.py
+[manual-1.py]: ./braincraft/env1_player_manual.py
+[random-2.py]: ./braincraft/env2_player_random.py
+[manual-2.py]: ./braincraft/env2_player_manual.py
+[random-3.py]: ./braincraft/env3_player_random.py
+[manual-3.py]: ./braincraft/env3_player_manual.py
 [switcher.py]:  ./braincraft/env1_player_switcher.py
 [switcher_alt.py]:  ./braincraft/env1_player_switcher_alt.py
 [evolution.py]: ./braincraft/env1_player_evolution.py
