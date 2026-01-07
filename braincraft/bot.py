@@ -135,7 +135,7 @@ class Bot:
             return None
                 
         # Try to move in the provided direction
-        self.direction += max(np.radians(-5), min(np.radians(+5), float(dtheta)))
+        self.direction += max(np.radians(-5), min(np.radians(+5), float(dtheta.item())))
         T = np.array([np.cos(self.direction), np.sin(self.direction)])
         self.position, self.hit = self.move_to(self.position + T*self.speed, environment)
         
