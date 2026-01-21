@@ -290,7 +290,8 @@ Author        | Date       | File            | Score                  | Seed   |
 [@rougier]    | 04/01/2026 | [manual-3.py]   | **15.00** (single run) | None   | Manual player (reference)
 [@rougier]    | 04/01/2026 | [random-3.py]   | **0.99** ± 0.08        | 12345  | Stupid random bot
 [@graviterra] | 06/01/2026 | [wallfollow.py] | **15.14** ± 0.03       | 12345  | Wall following
-[@graviterra] | 19/01/2026 | [ensemble.py]   | **14.80 ** ± 0.23      | 12345  | Ensemble-style search
+[@graviterra] | 19/01/2026 | [ensemble.py]   | **14.80** ± 0.23       | 12345  | Ensemble-style search
+[@graviterra] | 19/01/2026 | [gatesearch.py] | **14.95** ± 0.62       | 12345  | Gate primitive search
 
 
 [@rougier]: https://github.com/rougier
@@ -307,6 +308,7 @@ Author        | Date       | File            | Score                  | Seed   |
 [manual-3.py]: ./braincraft/env3_player_manual.py
 [wallfollow.py]: ./braincraft/env3_player_wallfollow.py
 [ensemble.py]: ./braincraft/env3_player_ensemble.py
+[gatesearch.py]: ./braincraft/env3_player_gate_primitives_search.py
 [switcher.py]:  ./braincraft/env1_player_switcher.py
 [switcher_alt.py]:  ./braincraft/env1_player_switcher_alt.py
 [evolution.py]: ./braincraft/env1_player_evolution.py
