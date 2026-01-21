@@ -282,14 +282,21 @@ Author        | Date       | File           | Score                  | Seed   | 
 
 ## Task 3
 
-Author        | Date       | File           | Score                  | Seed   | Description
-------------- | ---------- | -------------- | -----------------------|------- | -------------------------
-[@rougier]    | 04/02/2026 | [manual-3.py]  | **15.00** (single run) | None   | Manual player (reference)
-[@rougier]    | 04/02/2026 | [random-3.py]  | **0.99** ± 0.08        | 12345  | Stupid random bot
+Due to an initial misconception in the task, the task can be
+efficiently solved by making the bot to move on the outer ring (no decision).
+
+Author        | Date       | File            | Score                  | Seed   | Description
+------------- | ---------- | --------------- | -----------------------|------- | -------------------------
+[@rougier]    | 04/01/2026 | [manual-3.py]   | **15.00** (single run) | None   | Manual player (reference)
+[@rougier]    | 04/01/2026 | [random-3.py]   | **0.99** ± 0.08        | 12345  | Stupid random bot
+[@graviterra] | 06/01/2026 | [wallfollow.py] | **15.14** ± 0.03       | 12345  | Wall following
+[@graviterra] | 19/01/2026 | [ensemble.py]   | **14.80 ** ± 0.23      | 12345  | Ensemble-style search
+
 
 [@rougier]: https://github.com/rougier
 [@tjayada]: https://github.com/tjayada
-[@snowgoon88]: https://github.com/@snowgoon88
+[@snowgoon88]: https://github.com/snowgoon88
+[@graviterra]: https://github.com/graviterra
 [@vforch]: https://github.com/vforch
 [simple.py]:  ./braincraft/env1_player_simple.py
 [random-1.py]: ./braincraft/env1_player_random.py
@@ -298,6 +305,8 @@ Author        | Date       | File           | Score                  | Seed   | 
 [manual-2.py]: ./braincraft/env2_player_manual.py
 [random-3.py]: ./braincraft/env3_player_random.py
 [manual-3.py]: ./braincraft/env3_player_manual.py
+[wallfollow.py]: ./braincraft/env3_player_wallfollow.py
+[ensemble.py]: ./braincraft/env3_player_ensemble.py
 [switcher.py]:  ./braincraft/env1_player_switcher.py
 [switcher_alt.py]:  ./braincraft/env1_player_switcher_alt.py
 [evolution.py]: ./braincraft/env1_player_evolution.py
