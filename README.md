@@ -285,14 +285,15 @@ Author        | Date       | File           | Score                  | Seed   | 
 Due to an initial misconception in the task, the task can be
 efficiently solved by making the bot to move on the outer ring (no decision).
 
-Author        | Date       | File            | Score                  | Seed   | Description
-------------- | ---------- | --------------- | -----------------------|------- | -------------------------
-[@rougier]    | 04/01/2026 | [manual-3.py]   | **15.00** (single run) | None   | Manual player (reference)
-[@rougier]    | 04/01/2026 | [random-3.py]   | **0.99** ± 0.08        | 12345  | Stupid random bot
-[@graviterra] | 06/01/2026 | [wallfollow.py] | **15.14** ± 0.03       | 12345  | Wall following
-[@graviterra] | 19/01/2026 | [ensemble.py]   | **14.80** ± 0.23       | 12345  | Ensemble-style search
-[@graviterra] | 19/01/2026 | [gatesearch.py] | **14.95** ± 0.62       | 12345  | Gate primitive search
-[@graviterra] | 28/02/2026 | [selfnegate.py] | **15.14** ± 0.13       | 12345  | Self negate arbitration
+Author        | Date       | File              | Score                  | Seed   | Description
+------------- | ---------- | ----------------- | -----------------------|------- | -------------------------
+[@rougier]    | 04/01/2026 | [manual-3.py]     | **15.00** (single run) | None   | Manual player (reference)
+[@rougier]    | 04/01/2026 | [random-3.py]     | **0.99** ± 0.08        | 12345  | Stupid random bot
+[@graviterra] | 06/01/2026 | [wallfollow.py]   | **15.14** ± 0.03       | 12345  | Wall following
+[@graviterra] | 19/01/2026 | [ensemble.py]     | **14.80** ± 0.23       | 12345  | Ensemble-style search
+[@graviterra] | 19/01/2026 | [gatesearch.py]   | **14.95** ± 0.62       | 12345  | Gate primitive search
+[@graviterra] | 28/02/2026 | [selfnegate.py]   | **15.14** ± 0.13       | 12345  | Self negate arbitration
+[@graviterra] | 28/02/2026 | [reinforce-PG.py] | **15.10** ± 0.12       | 12345  | Reinforcement/Policy-gradient
 
 
 [@rougier]: https://github.com/rougier
@@ -310,6 +311,7 @@ Author        | Date       | File            | Score                  | Seed   |
 [wallfollow.py]: ./braincraft/env3_player_wallfollow.py
 [ensemble.py]: ./braincraft/env3_player_ensemble.py
 [selfnegate.py]: ./braincraft/env3_player_ensemble_selfnegate.py
+[reinforce-PG.py]: ./braincraft/env3_player_player_energy_reinforce.py
 [gatesearch.py]: ./braincraft/env3_player_gate_primitives_search.py
 [switcher.py]:  ./braincraft/env1_player_switcher.py
 [switcher_alt.py]:  ./braincraft/env1_player_switcher_alt.py
