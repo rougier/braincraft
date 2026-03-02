@@ -292,6 +292,7 @@ Author        | Date       | File            | Score                  | Seed   |
 [@graviterra] | 06/01/2026 | [wallfollow.py] | **15.14** ± 0.03       | 12345  | Wall following
 [@graviterra] | 19/01/2026 | [ensemble.py]   | **14.80** ± 0.23       | 12345  | Ensemble-style search
 [@graviterra] | 19/01/2026 | [gatesearch.py] | **14.95** ± 0.62       | 12345  | Gate primitive search
+[@graviterra] | 28/02/2026 | [selfnegate.py] | **15.14** ± 0.13       | 12345  | Self negate arbitration
 
 
 [@rougier]: https://github.com/rougier
@@ -308,6 +309,7 @@ Author        | Date       | File            | Score                  | Seed   |
 [manual-3.py]: ./braincraft/env3_player_manual.py
 [wallfollow.py]: ./braincraft/env3_player_wallfollow.py
 [ensemble.py]: ./braincraft/env3_player_ensemble.py
+[selfnegate.py]: ./braincraft/env3_player_ensemble_selfnegate.py
 [gatesearch.py]: ./braincraft/env3_player_gate_primitives_search.py
 [switcher.py]:  ./braincraft/env1_player_switcher.py
 [switcher_alt.py]:  ./braincraft/env1_player_switcher_alt.py
