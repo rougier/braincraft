@@ -296,7 +296,7 @@ Author        | Date       | File              | Score                  | Seed  
 [@graviterra] | 28/02/2026 | [reinforce-PG.py] | **15.10** ± 0.12       | 12345  | Reinforcement/Policy-gradient
 [@graviterra] | 28/02/2026 | [searchvalue.py]  | **15.06** ± 0.08       | 12345  | Value search driven
 [@graviterra] | 28/02/2026 | [phasecontrol.py] | **5.99** ± 3.33        | 12345  | Direct phase controller
-
+[@graviterra] | 28/02/2026 | [probe-commit.py] | **15.14** ± 0.13       | 12345  | Probe then commit
 
 [@rougier]: https://github.com/rougier
 [@tjayada]: https://github.com/tjayada
@@ -312,6 +312,7 @@ Author        | Date       | File              | Score                  | Seed  
 [manual-3.py]: ./braincraft/env3_player_manual.py
 [wallfollow.py]: ./braincraft/env3_player_wallfollow.py
 [ensemble.py]: ./braincraft/env3_player_ensemble.py
+[probe-commit.py]: ./braincraft/nv3_player_ensemble_sprt_commit.py
 [selfnegate.py]: ./braincraft/env3_player_ensemble_selfnegate.py
 [searchvalue.py]: ./braincraft/env3_player_gate_primitives_search_valuation.py
 [phasecontrol.py]: ./braincraft/env3_player_ensemble_selfnegate_assay.py
