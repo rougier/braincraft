@@ -294,6 +294,7 @@ Author        | Date       | File              | Score                  | Seed  
 [@graviterra] | 19/01/2026 | [gatesearch.py]   | **14.95** ± 0.62       | 12345  | Gate primitive search
 [@graviterra] | 28/02/2026 | [selfnegate.py]   | **15.14** ± 0.13       | 12345  | Self negate arbitration
 [@graviterra] | 28/02/2026 | [reinforce-PG.py] | **15.10** ± 0.12       | 12345  | Reinforcement/Policy-gradient
+[@graviterra] | 28/02/2026 | [searchvalue.py]  | **15.06** ± 0.08       | 12345  | Value search driven
 
 
 [@rougier]: https://github.com/rougier
@@ -311,6 +312,7 @@ Author        | Date       | File              | Score                  | Seed  
 [wallfollow.py]: ./braincraft/env3_player_wallfollow.py
 [ensemble.py]: ./braincraft/env3_player_ensemble.py
 [selfnegate.py]: ./braincraft/env3_player_ensemble_selfnegate.py
+[searchvalue.py]: ./braincraft/env3_player_gate_primitives_search_valuation.py
 [reinforce-PG.py]: ./braincraft/env3_player_player_energy_reinforce.py
 [gatesearch.py]: ./braincraft/env3_player_gate_primitives_search.py
 [switcher.py]:  ./braincraft/env1_player_switcher.py
