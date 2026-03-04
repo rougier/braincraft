@@ -270,7 +270,7 @@ Author        | Date       | File           | Score                  | Seed   | 
 [@vforch]     | 21/08/2025 | [simple.py]    | **13.71** ± 0.46       | 78     | [Handcrafted weights 1]
 [@snowgoon88] | 28/08/2025 | [switcher.py]  | **11.39** ± 3.56       | 78     | [Handcrafted weights 2]
 [@vforch],[@snowgoon88] | 31/08/2025 | [switcher_alt.py]  | **14.71** ± 0.46   | 78     | [Handcrafted weights 3]
-
+[@graviterra] | 02/03/2026 | [self-branch.py]  | **14.00** ± 0.02    | 12345  | Self-branch sparse ESN
 
 ## Task 2
 
@@ -311,6 +311,7 @@ Author        | Date       | File              | Score                  | Seed  
 [manual-2.py]: ./braincraft/env2_player_manual.py
 [random-3.py]: ./braincraft/env3_player_random.py
 [manual-3.py]: ./braincraft/env3_player_manual.py
+[self-branch.py]: ./braincraft/env1_player_ensemble_v3_metric.py
 [wallfollow.py]: ./braincraft/env3_player_wallfollow.py
 [ensemble.py]: ./braincraft/env3_player_ensemble.py
 [dual-branch.py]: ./braincraft/env3_player_ensemble_counterfactual_twin.py
