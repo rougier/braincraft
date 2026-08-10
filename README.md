@@ -271,7 +271,7 @@ Author        | Date       | File           | Score                  | Seed   | 
 [@snowgoon88] | 28/08/2025 | [switcher.py]  | **11.39** ± 3.56       | 78     | [Handcrafted weights 2]
 [@vforch],[@snowgoon88] | 31/08/2025 | [switcher_alt.py]  | **14.71** ± 0.46  | 78 | [Handcrafted weights 3]
 [@graviterra] | 02/03/2026 | [self-branch.py]  | **14.00** ± 0.02    | 12345  | Self-branch sparse ESN
-[@GuanchunLi] | 23/04/2026 | [bio-1.py]     | **14.40** ± 0.36       | 12345  | pointwise-activation ESN
+[@GuanchunLi] | 23/04/2026 | [bio-1.py]     | **14.40** ± 0.36       | 12345  | [README-bio-1]
 
 
 ## Task 2
@@ -280,6 +280,7 @@ Author        | Date       | File           | Score                  | Seed   | 
 ------------- | ---------- | -------------- | -----------------------|------- | -------------------------
 [@rougier]    | 10/10/2025 | [manual-2.py]  | **15.00** (single run) | None   | Manual player (reference)
 [@rougier]    | 10/10/2025 | [random-2.py]  | **1.27** ± 0.09        | 12345  | Stupid random bot
+[@GuanchunLi] | 23/04/2026 | [bio-2.py]     | **14.77** ± 0.21       | 12345  | [README-bio-2]
 
 
 ## Task 3
@@ -315,7 +316,9 @@ Author        | Date       | File              | Score                  | Seed  
 [random-3.py]: ./braincraft/env3_player_random.py
 [manual-3.py]: ./braincraft/env3_player_manual.py
 [bio-1.py]:    ./braincraft/env1_player_bio.py
+[README-bio-1]: ./braincraft/env1_player_bio.md
 [bio-2.py]:    ./braincraft/env1_player_bio.py
+[README-bio-2]: ./braincraft/env2_player_bio.md
 [bio-3.py]:    ./braincraft/env1_player_bio.py
 [self-branch.py]: ./braincraft/env1_player_ensemble_v3_metric.py
 [wallfollow.py]: ./braincraft/env3_player_wallfollow.py
