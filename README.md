@@ -269,8 +269,10 @@ Author        | Date       | File           | Score                  | Seed   | 
 [@tjayada]    | 31/07/2025 | [evolution.py] | **12.70** ± 0.43       | 78     | [Genetic algorithm]
 [@vforch]     | 21/08/2025 | [simple.py]    | **13.71** ± 0.46       | 78     | [Handcrafted weights 1]
 [@snowgoon88] | 28/08/2025 | [switcher.py]  | **11.39** ± 3.56       | 78     | [Handcrafted weights 2]
-[@vforch],[@snowgoon88] | 31/08/2025 | [switcher_alt.py]  | **14.71** ± 0.46   | 78     | [Handcrafted weights 3]
+[@vforch],[@snowgoon88] | 31/08/2025 | [switcher_alt.py]  | **14.71** ± 0.46  | 78 | [Handcrafted weights 3]
 [@graviterra] | 02/03/2026 | [self-branch.py]  | **14.00** ± 0.02    | 12345  | Self-branch sparse ESN
+[@GuanchunLi] | 23/04/2026 | [bio-1.py]     | **14.40** ± 0.36       | 12345  | pointwise-activation ESN
+
 
 ## Task 2
 
@@ -304,6 +306,7 @@ Author        | Date       | File              | Score                  | Seed  
 [@snowgoon88]: https://github.com/snowgoon88
 [@graviterra]: https://github.com/graviterra
 [@vforch]: https://github.com/vforch
+[@GuanchunLi]: https://github.com/GuanchunLi
 [simple.py]:  ./braincraft/env1_player_simple.py
 [random-1.py]: ./braincraft/env1_player_random.py
 [manual-1.py]: ./braincraft/env1_player_manual.py
@@ -311,6 +314,9 @@ Author        | Date       | File              | Score                  | Seed  
 [manual-2.py]: ./braincraft/env2_player_manual.py
 [random-3.py]: ./braincraft/env3_player_random.py
 [manual-3.py]: ./braincraft/env3_player_manual.py
+[bio-1.py]:    ./braincraft/env1_player_bio.py
+[bio-2.py]:    ./braincraft/env1_player_bio.py
+[bio-3.py]:    ./braincraft/env1_player_bio.py
 [self-branch.py]: ./braincraft/env1_player_ensemble_v3_metric.py
 [wallfollow.py]: ./braincraft/env3_player_wallfollow.py
 [ensemble.py]: ./braincraft/env3_player_ensemble.py
