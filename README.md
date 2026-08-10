@@ -301,6 +301,7 @@ Author        | Date       | File              | Score                  | Seed  
 [@graviterra] | 28/02/2026 | [phasecontrol.py] | **5.99** ± 3.33        | 12345  | Direct phase controller
 [@graviterra] | 28/02/2026 | [probe-commit.py] | **15.14** ± 0.13       | 12345  | Probe then commit
 [@graviterra] | 28/02/2026 | [dual-branch.py]  | **15.14** ± 0.13       | 12345  | Dual-branch sparse ESN
+[@GuanchunLi] | 23/04/2026 | [bio-3.py]        | **14.40** ± 0.49       | 12345  | [README-bio-3]
 
 [@rougier]: https://github.com/rougier
 [@tjayada]: https://github.com/tjayada
@@ -319,7 +320,8 @@ Author        | Date       | File              | Score                  | Seed  
 [README-bio-1]: ./braincraft/env1_player_bio.md
 [bio-2.py]:    ./braincraft/env1_player_bio.py
 [README-bio-2]: ./braincraft/env2_player_bio.md
-[bio-3.py]:    ./braincraft/env1_player_bio.py
+[bio-3.py]:    ./braincraft/env2_player_bio.py
+[README-bio-3]: ./braincraft/env3_player_bio.md
 [self-branch.py]: ./braincraft/env1_player_ensemble_v3_metric.py
 [wallfollow.py]: ./braincraft/env3_player_wallfollow.py
 [ensemble.py]: ./braincraft/env3_player_ensemble.py
